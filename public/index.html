@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="bundle.js" async></script>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/modal.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  <aside class="sidebar">
+    <div class="header">
+      <img src="https://squirro.com/wp-content/uploads/2015/09/logo_squirro_.png">
+    </div>
+
+    <ul class="nav">
+      <li><a data-routable="true" href="/" class="active">Address Book</a></li>
+      <li><a data-routable="true" href="/chart">Data Chart</a></li>
+    </ul>
+  </aside>
+
+  <section class="main-content" id="addressBook">
+
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+      <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+          <header class="modal-header">
+            <h2 class="modal-title" id="modal-1-title">
+              New Address
+            </h2>
+            <button class="modal-close" aria-label="Close modal" data-micromodal-close></button>
+          </header>
+          <form id="newAddressForm">
+            <main class="modal-content" id="modal-1-content">
+
+                <div class="input-parent">
+                  <label for="name">Name</label>
+                  <input placeholder="Name" id="name" name="name" required>
+                </div>
+                <div class="input-parent">
+                  <label for="phone">Phone</label>
+                  <input placeholder="Phone" id="phone" name="phone" required>
+                </div>
+                <div class="input-parent">
+                  <label for="address">Address</label>
+                  <input placeholder="Address" id="address" name="address" required>
+                </div>
+            </main>
+            <footer class="modal-footer">
+              <button type="submit" id="newAddress" class="submit" >Add New Address</button>
+            </footer>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-info">
+      <h1>Address Book</h1>
+      <button type="button" class="open-modal" data-custom-open="modal-1">
+        Add New Address
+      </button>
+    </div>
+    <div class="wrapper">
+        <div id="render-list">
+          <div class="no-address">
+            <h1 class="list-empty">No addresses in the list</h1>
+            <button type="button" class="open-modal" data-custom-open="modal-1">
+              Add New Address
+            </button>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="main-content" id="dataChart" style="display: none">
+    <div class="content-info">
+      <h1>Data Chart</h1>
+    </div>
+    <div class="wrapper" id="chartContainer">
+    </div>
+  </section>
+  </body>
+</html>

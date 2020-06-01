@@ -76,4 +76,4 @@ class AppView extends Backbone.View {
     }
   }
 }
-export default AppView;
+export default new AppView();

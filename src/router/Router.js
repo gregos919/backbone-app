@@ -32,8 +32,8 @@ class AppRouter extends Backbone.Router {
       $("a[data-routable='true']").removeClass('active');
       $a.addClass('active');
 
-      //this.navigate(href, true);
-      Backbone.history.loadUrl(href, true);
+      this.navigate(href, true);
+      //Backbone.history.loadUrl(href, true);
 
     });
 
@@ -43,7 +43,7 @@ class AppRouter extends Backbone.Router {
   addressBook() {
     $('#addressBook').show();
     $('#dataChart').hide();
-    return AppView();
+    return AppView;
   }
 
   dataChart() {

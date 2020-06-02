@@ -42,12 +42,16 @@ class AppRouter extends Backbone.Router {
   addressBook() {
     $('#addressBook').show();
     $('#dataChart').hide();
+    $("a[data-routable='true']").removeClass('active');
+    $('#address-link').addClass('active');
     return AppView();
   }
 
   dataChart() {
     $('#dataChart').show();
     $('#addressBook').hide();
+    $("a[data-routable='true']").removeClass('active');
+    $('#chart-link').addClass('active');
     return new ChartView();
   }
 }
